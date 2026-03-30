@@ -1,0 +1,4 @@
+cloudflared tunnel login
+cloudflared tunnel create jarvis
+cloudflared tunnel route dns jarvis api.jarvix.world
+cloudflared tunnel --config config.yml run jarvis

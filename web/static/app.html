@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jarvix AI App</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="app">
+    <div id="loginView" class="center-wrap">
+      <div class="glass card auth-card">
+        <div class="brand">
+          <div class="brand-badge">J</div>
+          <div>
+            <h1>Jarvix AI</h1>
+            <p>Sign in to your Jarvis dashboard</p>
+          </div>
+        </div>
+        <form id="loginForm" class="auth-form">
+          <label>Username</label>
+          <input id="username" autocomplete="username" placeholder="Enter your username">
+          <label>Password</label>
+          <input id="password" type="password" autocomplete="current-password" placeholder="Enter your password">
+          <button type="submit" class="primary-btn">Sign in</button>
+          <div id="loginError" class="error-text"></div>
+        </form>
+        <div class="hint-box">
+          <strong>Starter login</strong>
+          <div>Username: admin</div>
+          <div>Password: change-me-now</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="chatView" class="hidden">
+      <aside class="sidebar glass">
+        <div class="brand brand-small">
+          <div class="brand-badge">J</div>
+          <div>
+            <h2>Jarvix AI</h2>
+            <p>Full local companion stack</p>
+          </div>
+        </div>
+        <div class="user-box">
+          <div class="user-label">Signed in as</div>
+          <div id="whoami">admin</div>
+        </div>
+        <div class="status-box">
+          <div><span class="dot"></span> Chat, multi-image vision, streaming, drag & drop</div>
+          <div class="small-note">Composer locks while Jarvis is thinking.</div>
+        </div>
+        <a class="secondary-btn link-btn" href="/">Back to home</a>
+        <button id="logoutBtn" class="secondary-btn">Log out</button>
+      </aside>
+
+      <main class="main-panel">
+        <div class="topbar glass">
+          <div>
+            <h1>Jarvis</h1>
+            <p>Friendly chat, memory, multi-image analysis, Cloudflare-ready</p>
+          </div>
+        </div>
+
+        <div id="messages" class="messages glass"></div>
+
+        <form id="composerForm" class="composer glass">
+          <div class="dropzone" id="dropzone">
+            <div class="drop-main">Drop image files here or choose them below</div>
+            <div class="drop-sub">You can attach multiple images and ask one question about all of them.</div>
+          </div>
+
+          <div class="composer-top">
+            <textarea id="prompt" placeholder="Talk to Jarvis or ask about one or more images..." rows="3"></textarea>
+          </div>
+
+          <div class="composer-bottom">
+            <label class="file-pill" id="filePill">
+              <input id="imageFile" type="file" accept="image/*" multiple>
+              <span id="fileLabel">Choose images</span>
+            </label>
+            <div id="typing" class="typing hidden">Jarvis is thinking…</div>
+            <button id="sendBtn" type="submit" class="primary-btn">Send</button>
+          </div>
+
+          <div id="previewWrap" class="preview-wrap hidden"></div>
+        </form>
+      </main>
+    </div>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

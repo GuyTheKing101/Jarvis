@@ -1,0 +1,8 @@
+tunnel: b17ac06e-b3ea-41c0-bd74-aa7ed4a4a9f8
+credentials-file: C:\Users\Administrator\.cloudflared\b17ac06e-b3ea-41c0-bd74-aa7ed4a4a9f8.json
+protocol: http2
+
+ingress:
+  - hostname: api.jarvix.world
+    service: http://localhost:8080
+  - service: http_status:404
